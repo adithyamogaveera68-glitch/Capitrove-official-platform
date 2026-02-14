@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitrove – Simple Investing for Everyone</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            /* Updated background with stock-themed image */
+            background: url('https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?auto=format&fit=crop&w=2000&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #222;
+        }
+
+        /* Add subtle overlay for readability */
+        .overlay {
+            background: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(17, 24, 39, 0.9);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(6px);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav a {
+            color: #fff;
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: rgba(37, 99, 235, 0.9);
+            color: #fff;
+            backdrop-filter: blur(4px);
+        }
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+        .section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(17, 24, 39, 0.9);
+            color: white;
+            margin-top: 30px;
+            backdrop-filter: blur(4px);
+        }
+        .btn {
+            background: #111827;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="overlay">
+    <header>
+        <h1 style="display:flex; align-items:center; gap:10px;">
+            <img src="capitrove.jpg" style="height:40px;"> Capitrove
+        </h1>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#insights">Insights</a>
+            <a href="#tools">Tools</a>
+            <a href="#why">Why Capitrove?</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Simple Investing. Clear Insights.</h2>
+        <p>Helping beginners understand stocks in the simplest way possible.</p>
+        <a href="#services" class="btn">Explore</a>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+
+        <div class="card" id="analysis-card">
+            <h3>📊 Simple Stock Analysis</h3>
+            <p>We break down complex stock data into easy-to-understand insights.</p>
+
+            <div id="analysis-tips" style="display:none; margin-top:15px; padding:15px; background:#eef2ff; border-radius:8px;">
+                <h4>Tips for Simple Stock Analysis:</h4>
+                <ul>
+                    <li>✔ Check revenue growth for the last 3 years.</li>
+                    <li>✔ Compare profit growth with industry averages.</li>
+                    <li>✔ Look at ROE (Return on Equity) – above 15% is strong.</li>
+                    <li>✔ Avoid companies with high debt-to-equity ratios.</li>
+                    <li>✔ Track price trends using 50-DMA & 200-DMA.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="beginner-card">
+            <h3>🎯 Beginner-Friendly Investing Tips</h3>
+            <p>Step-by-step guidance for students and new investors.</p>
+
+            <div id="beginner-tips" style="display:none; margin-top:15px; padding:15px; background:#fff9e6; border-radius:8px;">
+                <h4>Beginner-Friendly Tips:</h4>
+                <ul>
+                    <li>✔ Start with index funds or large-cap stocks.</li>
+                    <li>✔ Invest small amounts consistently (SIP method).</li>
+                    <li>✔ Never invest money you cannot afford to lose.</li>
+                    <li>✔ Learn basics like PE ratio, market cap, and ROE.</li>
+                    <li>✔ Avoid emotional or panic selling.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="market-card">
+            <h3>📈 Market Insights in Simple Language</h3>
+            <p>Daily updates, charts, and explanations without jargon.</p>
+
+            <div id="market-tips" style="display:none; margin-top:15px; padding:15px; background:#e7f8ff; border-radius:8px;">
+                <h4>Market Insights Tips:</h4>
+                <ul>
+                    <li>✔ Follow overall market trend before buying any stock.</li>
+                    <li>✔ Keep an eye on Nifty & Sensex levels for market direction.</li>
+                    <li>✔ Track sectoral trends (IT, Pharma, Banking, etc.).</li>
+                    <li>✔ Understand global factors like US markets & crude oil prices.</li>
+                    <li>✔ Read company quarterly results in simple summary format.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   <!-- NEW SECTION 1: INSIGHTS -->
+<section id="insights" class="section">
+    <h2>Insights & Blog</h2>
+
+    <!-- PE Ratio Card -->
+    <div class="card" onclick="toggle('pe')">
+        📌 What is PE Ratio? (Explained Simply)
+        <div id="pe" class="content" style="background:white; padding:15px; border-radius:8px; margin-top:10px;">
+<ul style="list-style-type: disc; padding-left: 20px;">
+    <li style="margin-bottom:8px;">PE Ratio = Price of Stock ÷ Earnings per Share (EPS)</li>
+    <li style="margin-bottom:8px;">It tells you how much investors are willing to pay for ₹1 profit of a company</li>
+    <li style="margin-bottom:8px;"><strong>Understanding:</strong>
+        <ul style="padding-left: 20px;">
+            <li style="margin-bottom:6px;">High PE = Expensive stock (expect high growth)</li>
+            <li style="margin-bottom:6px;">Low PE = Cheap stock (maybe undervalued)</li>
+        </ul>
+    </li>
+    <li style="margin-bottom:8px;"><strong>Example:</strong> Stock Price = ₹200, EPS = ₹10 → PE = 20</li>
+    <li style="margin-bottom:8px;"><strong>When is PE useful:</strong>
+        <ul style="padding-left: 20px;">
+            <li style="margin-bottom:6px;">Compare companies in the same sector</li>
+            <li style="margin-bottom:6px;">Identify overpriced or underpriced stocks</li>
+            <li style="margin-bottom:6px;">Understand market expectations</li>
+        </ul>
+    </li>
+    <li style="margin-bottom:8px;"><strong>Important:</strong> Never use PE alone. Combine with ROE, Growth, Debt & Industry PE</li>
+</ul>
+        </div>
+    </div>
+
+    <!-- Analyse Stock Card -->
+    <div class="card" onclick="toggle('analyse')">
+        📌 How to Analyse a Stock in 5 Minutes
+        <div id="analyse" class="content" style="background:white; padding:15px; border-radius:8px; margin-top:10px;">
+<ul style="list-style-type: disc; padding-left: 20px;">
+    <li style="margin-bottom:8px;">Step 1: Check Revenue Growth (8–12%+ yearly)</li>
+    <li style="margin-bottom:8px;">Step 2: Check Profit Growth (last 3–5 years)</li>
+    <li style="margin-bottom:8px;">Step 3: ROE > 15% = Strong</li>
+    <li style="margin-bottom:8px;">Step 4: Debt-to-Equity < 1</li>
+    <li style="margin-bottom:8px;">Step 5: Compare PE with industry + check trend (50 & 200 DMA)</li>
+    <li style="margin-bottom:8px;"><strong>Quick Summary of a Good Stock:</strong>
+        <ul style="padding-left: 20px;">
+            <li style="margin-bottom:6px;">Growing sales</li>
+            <li style="margin-bottom:6px;">Growing profits</li>
+            <li style="margin-bottom:6px;">High ROE</li>
+            <li style="margin-bottom:6px;">Low debt</li>
+            <li style="margin-bottom:6px;">Fair valuation</li>
+        </ul>
+    </li>
+</ul>
+        </div>
+    </div>
+
+    <!-- Best Sectors Card -->
+    <div class="card" onclick="toggle('sectors')">
+        📌 Best Sectors to Invest in 2026
+        <div id="sectors" class="content" style="background:white; padding:15px; border-radius:8px; margin-top:10px;">
+<ul style="list-style-type: disc; padding-left: 20px;">
+    <li style="margin-bottom:8px;">Banking & Finance – Digital payments + fast loan growth</li>
+    <li style="margin-bottom:8px;">IT & AI – AI adoption rising globally</li>
+    <li style="margin-bottom:8px;">Green Energy & EV – Solar, wind, EV boom</li>
+    <li style="margin-bottom:8px;">Pharma – High healthcare demand</li>
+    <li style="margin-bottom:8px;">FMCG – Daily-use stable products</li>
+    <li style="margin-bottom:8px;"><strong>Strategy:</strong> Pick 2–3 sectors you understand and choose fundamentally strong companies</li>
+</ul>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggle(id) {
+    var x = document.getElementById(id);
+    x.style.display = (x.style.display === "block") ? "none" : "block";
+}
+</script>
+
+<!-- NEW SECTION 2: TOOLS -->
+<section id="tools" class="section">
+    <h2>Tools</h2>
+
+    <!-- Stock Screener Card -->
+    <div class="card" onclick="toggle('screener')">
+        📊 Stock Screener
+        <div id="screener" class="content" style="background:white; padding:15px; border-radius:8px; margin-top:10px;">
+<ul style="list-style-type: disc; padding-left:20px;">
+    <li style="margin-bottom:8px;">Find high-quality stocks instantly</li>
+    <li style="margin-bottom:8px;">Filter by PE, ROE, Debt, Growth & Market Cap</li>
+    <li style="margin-bottom:8px;">Compare companies sector-wise</li>
+    <li style="margin-bottom:8px;">Identify undervalued stocks</li>
+    <li style="margin-bottom:8px;">Capitrove Score for beginners</li>
+</ul>
+
+<p style="margin-bottom:10px;">🎯 For: Students, beginners & new investors</p>
+
+<a href="https://www.screener.in/" target="_blank" class="btn" style="margin-top:10px; display:inline-block;">🔍 Open Stock Screener</a>
+        </div>
+    </div>
+
+    <!-- Investment Calculators Card -->
+    <div class="card" onclick="toggle('calculators')">
+        🧮 Investment Calculators
+        <div id="calculators" class="content" style="background:white; padding:15px; border-radius:8px; margin-top:10px;">
+<ul style="list-style-type: disc; padding-left:20px;">
+    <li style="margin-bottom:8px;">SIP Calculator</li>
+    <li style="margin-bottom:8px;">Lumpsum Calculator</li>
+    <li style="margin-bottom:8px;">Goal Planner</li>
+    <li style="margin-bottom:8px;">CAGR Returns Calculator</li>
+    <li style="margin-bottom:8px;">Risk Assessment Tool</li>
+</ul>
+
+<p style="margin-bottom:10px;">🎯 Helps you plan money with clear numbers, not guesswork.</p>
+
+<div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:10px;">
+    <a href="https://groww.in/calculators/sip-calculator" target="_blank" class="btn">📈 SIP Calculator</a>
+    <a href="https://groww.in/calculators/lumpsum-calculator" target="_blank" class="btn">💰 Lumpsum Calculator</a>
+    <a href="https://primeinvestor.in/calculators/financial-goal-calculator/" target="_blank" class="btn">🎯 Goal Planner</a>
+    <a href="https://groww.in/calculators/cagr-calculator" target="_blank" class="btn">📊 CAGR Calculator</a>
+    <a href="https://mf.nipponindiaim.com/knowledge-center/tools/risk-analyzer" target="_blank" class="btn">⚠ Risk Profile Test</a>
+</div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="why" class="section">
+        <h2>Why Choose Capitrove?</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Students don’t know how to start investing – we simplify it.</li>
+                <li>✔ People don’t know how to analyze stocks – we teach step-by-step.</li>
+                <li>✔ Beginners fear losing money – we guide safely.</li>
+                <li>✔ People want simple insights – we deliver clearly.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <div class="card" style="cursor:pointer;">
+            <p>📞 Contact Capitrove — We're Here to Guide Your Investment Journey</p>
+            <p>Have questions about stocks, investments, or learning finance?</p>
+            <p>Reach out anytime — we reply within 24 hours.</p>
+            <p>📧 Email: adithyamogaveera68@gmail.com</p>
+            <p>📱 WhatsApp: 9980769972</p>
+            <p>📍 Location: Bengaluru</p> 
+        </div>
+    </section>
+
+    <footer>
+        <p>Capitrove</p>
+        <p>© 2025 Capitrove Ltd.</p>
+        <p>All rights reserved.</p>
+
+        <div style="margin-top:15px; display:flex; justify-content:center; gap:22px; align-items:center;">
+            <a href="https://x.com/capitrove" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/twitterx--v1.png" width="28" />
+            </a>
+            <a href="https://instagram.com/capitrove_invest" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/instagram-new.png" width="28" />
+            </a>
+            <a href="#">
+                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png" width="28" />
+            </a>
+            <a href="https://www.youtube.com/@Grow_withCapitrove" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/youtube-play.png" width="32" />
+            </a>
+            <a href="https://wa.me/919980769972?text=Hi%20I%20want%20to%20learn%20about%20investing%20with%20Capitrove" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/whatsapp--v1.png" width="28" />
+            </a>
+            <a href="https://t.me/CapitroveInsights" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/telegram-app.png" width="28" />
+            </a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    document.getElementById('analysis-card').addEventListener('click', () => {
+        const box = document.getElementById('analysis-tips');
+        box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.getElementById('beginner-card').addEventListener('click', () => {
+        const box = document.getElementById('beginner-tips');
+        box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.getElementById('market-card').addEventListener('click', () => {
+        const box = document.getElementById('market-tips');
+        box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.querySelectorAll('nav a, .btn').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.hash) {
+                e.preventDefault();
+                document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        header.style.boxShadow = window.scrollY > 30 
+            ? "0 3px 10px rgba(0,0,0,0.2)" 
+            : "none";
+    });
+
+    document.querySelector('#contact .card').addEventListener('click', () => {
+        alert('Thanks for reaching out! We will get back soon.');
+    });
+</script>
+
+</body>
+</html>
